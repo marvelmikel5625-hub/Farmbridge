@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-warm-white text-soil-black font-sans;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F0EDE8;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #D1CCC5;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #78726A;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-narrow {
+    @apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32;
+  }
+
+  .card {
+    @apply bg-white border border-silt rounded-2xl shadow-card p-6 md:p-8 transition-all duration-400;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover hover:-translate-y-[6px];
+  }
+
+  .btn-primary {
+    @apply bg-forest text-white rounded-xl px-8 py-3.5 font-semibold 
+           hover:bg-leaf transition-all duration-300 hover:scale-[1.03]
+           active:scale-95 focus:outline-none focus:ring-2 focus:ring-leaf/30;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-forest text-forest rounded-xl px-8 py-3.5 font-semibold 
+           hover:bg-mist-green transition-all duration-300 hover:scale-[1.03]
+           active:scale-95 focus:outline-none focus:ring-2 focus:ring-leaf/30;
+  }
+
+  .btn-gold {
+    @apply bg-harvest-gold text-white rounded-xl px-8 py-3.5 font-semibold 
+           hover:bg-golden-wheat shadow-md transition-all duration-300 hover:scale-[1.03]
+           active:scale-95 focus:outline-none focus:ring-2 focus:ring-harvest-gold/30;
+  }
+
+  .btn-sm {
+    @apply px-5 py-2.5 text-sm;
+  }
+
+  .input-field {
+    @apply rounded-xl border border-silt bg-white px-4 py-3.5
+           focus:ring-2 focus:ring-leaf/30 focus:border-leaf
+           focus:outline-none transition-all duration-200 w-full;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-clay mb-1.5;
+  }
+
+  .overline {
+    @apply text-overline uppercase tracking-[3px] text-harvest-gold font-bold;
+  }
+}
