@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 export default function LoginPage() {
@@ -11,12 +13,12 @@ export default function LoginPage() {
 
         <form className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1.5">Email Address</label>
-            <input type="email" className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-green-600/20 focus:border-green-700 outline-none transition" placeholder="you@example.com" />
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">Email or Phone Number</label>
+            <input type="text" className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-green-600/20 focus:border-green-700 outline-none transition" placeholder="you@example.com or 0800 000 0000" required />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1.5">Password</label>
-            <input type="password" className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-green-600/20 focus:border-green-700 outline-none transition" placeholder="••••••••" />
+            <input type="password" className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-green-600/20 focus:border-green-700 outline-none transition" placeholder="••••••••" required />
           </div>
           <div className="flex justify-end">
             <Link href="/forgot-password" className="text-sm text-green-700 hover:underline">Forgot Password?</Link>
