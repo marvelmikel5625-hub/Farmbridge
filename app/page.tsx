@@ -338,8 +338,8 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">Ready to Transform Your Agricultural Trade?</h2>
           <p className="text-lg text-gray-500 mb-8">Join thousands of farmers and buyers already trading smarter on FarmBridge.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/signup" className="bg-green-900 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-green-800 transition">Sign Up as a Buyer</Link>
-            <Link href="/signup" className="bg-amber-600 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-amber-700 transition shadow-md">Sign Up as a Seller</Link>
+            <Link href="/signup" className="bg-green-900 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-green-800 transition">Create Account</Link>
+            <Link href="/login" className="bg-amber-600 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-amber-700 transition shadow-md">Sign In</Link>
           </div>
         </div>
       </section>
