@@ -385,8 +385,8 @@ export default function Home() {
                 <li><Link href="/marketplace" className="hover:text-white">Marketplace</Link></li>
                 <li><Link href="/how-it-works" className="hover:text-white">How It Works</Link></li>
                 <li><Link href="/pricing" className="hover:text-white">Pricing</Link></li>
-                <li><Link href="/blog" className="hover:text-white">Blog</Link></li> 
-                <li><Link href="/about" className="text-sm font-medium text-gray-600 hover:text-green-800">About</Link>
+                <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
+                <li><Link href="/about" className="hover:text-white">About</Link></li> 
               </ul>
             </div>
             <div>
