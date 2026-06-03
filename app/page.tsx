@@ -19,9 +19,13 @@ import {
   CheckCircle,
   Phone,
   MessageCircle,
+  LogIn,
+  UserPlus,
+  Store,
+  Tag,
+  HelpCircle,
 } from 'lucide-react';
 
-// Data
 const categories = [
   { icon: Tractor, label: 'Tractors & Machinery', count: '1,200+' },
   { icon: Sprout, label: 'Seeds & Seedlings', count: '3,500+' },
@@ -34,27 +38,9 @@ const categories = [
 ];
 
 const testimonials = [
-  {
-    quote: 'FarmBridge helped me sell 50 tonnes of maize in just 3 days. The escrow system gave me confidence.',
-    name: 'Ibrahim Musa',
-    role: 'Maize Farmer, Kaduna',
-    avatar: 'https://i.pravatar.cc/150?img=11',
-    rating: 5,
-  },
-  {
-    quote: 'I found a reliable tractor dealer within 24 hours. Verified sellers make all the difference.',
-    name: 'Grace Okonkwo',
-    role: 'Rice Farmer, Ebonyi',
-    avatar: 'https://i.pravatar.cc/150?img=23',
-    rating: 5,
-  },
-  {
-    quote: 'As a fertilizer supplier, FarmBridge connects me to genuine buyers. My sales have doubled.',
-    name: 'Ahmed Bello',
-    role: 'Agro Dealer, Kano',
-    avatar: 'https://i.pravatar.cc/150?img=45',
-    rating: 5,
-  },
+  { quote: 'FarmBridge helped me sell 50 tonnes of maize in just 3 days. The escrow system gave me confidence.', name: 'Ibrahim Musa', role: 'Maize Farmer, Kaduna', avatar: 'https://i.pravatar.cc/150?img=11', rating: 5 },
+  { quote: 'I found a reliable tractor dealer within 24 hours. Verified sellers make all the difference.', name: 'Grace Okonkwo', role: 'Rice Farmer, Ebonyi', avatar: 'https://i.pravatar.cc/150?img=23', rating: 5 },
+  { quote: 'As a fertilizer supplier, FarmBridge connects me to genuine buyers. My sales have doubled.', name: 'Ahmed Bello', role: 'Agro Dealer, Kano', avatar: 'https://i.pravatar.cc/150?img=45', rating: 5 },
 ];
 
 const faqs = [
@@ -65,33 +51,11 @@ const faqs = [
 ];
 
 const blogPosts = [
-  {
-    title: 'How Biogas is Revolutionizing Nigerian Farms',
-    excerpt: 'Discover how farmers are turning waste into energy and saving millions.',
-    image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&q=80',
-    category: 'Biogas & Energy',
-    date: 'May 15, 2025',
-    readTime: '5 min read',
-  },
-  {
-    title: '5 Tips for Higher Maize Yield This Season',
-    excerpt: 'Expert advice on soil preparation, seed selection, and pest control.',
-    image: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&q=80',
-    category: 'Crop Guides',
-    date: 'May 10, 2025',
-    readTime: '4 min read',
-  },
-  {
-    title: 'Understanding Fertilizer Prices in 2025',
-    excerpt: 'A comprehensive guide to current market trends and what to expect.',
-    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80',
-    category: 'Market Insights',
-    date: 'May 8, 2025',
-    readTime: '6 min read',
-  },
+  { title: 'How Biogas is Revolutionizing Nigerian Farms', excerpt: 'Discover how farmers are turning waste into energy and saving millions.', image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&q=80', category: 'Biogas & Energy', date: 'May 15, 2025', readTime: '5 min read' },
+  { title: '5 Tips for Higher Maize Yield This Season', excerpt: 'Expert advice on soil preparation, seed selection, and pest control.', image: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&q=80', category: 'Crop Guides', date: 'May 10, 2025', readTime: '4 min read' },
+  { title: 'Understanding Fertilizer Prices in 2025', excerpt: 'A comprehensive guide to current market trends and what to expect.', image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80', category: 'Market Insights', date: 'May 8, 2025', readTime: '6 min read' },
 ];
 
-// Components
 function StarRating({ rating }: { rating: number }) {
   return (
     <div className="flex gap-0.5">
@@ -112,7 +76,6 @@ function SectionHeading({ overline, title, description }: { overline: string; ti
   );
 }
 
-// Main Page
 export default function Home() {
   return (
     <div className="bg-white">
@@ -137,10 +100,23 @@ export default function Home() {
               <a href="https://wa.me/2349077753551" className="flex items-center gap-1.5 bg-green-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-green-700 transition">
                 <MessageCircle className="w-4 h-4" /> Chat Us
               </a>
-              <Link href="/login" className="text-sm font-medium text-gray-600 hover:text-green-800">Sign In</Link>
-              <Link href="/signup" className="bg-green-900 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-green-800 transition">
-                Sign Up
-              </Link>
+              <div className="relative group">
+                <button className="flex items-center gap-1 p-2 hover:bg-gray-100 rounded-xl transition">
+                  <span className="w-1.5 h-1.5 bg-green-900 rounded-full"></span>
+                  <span className="w-1.5 h-1.5 bg-green-900 rounded-full"></span>
+                  <span className="w-1.5 h-1.5 bg-green-900 rounded-full"></span>
+                </button>
+                <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-200 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <Link href="/login" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 transition"><LogIn className="w-4 h-4" /> Sign In</Link>
+                  <Link href="/signup" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 transition"><UserPlus className="w-4 h-4" /> Create Account</Link>
+                  <hr className="my-1 border-gray-100" />
+                  <Link href="/dashboard/verify" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 transition"><ShieldCheck className="w-4 h-4" /> KYC Verification</Link>
+                  <Link href="/dashboard" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 transition"><Store className="w-4 h-4" /> Start Selling</Link>
+                  <hr className="my-1 border-gray-100" />
+                  <Link href="/pricing" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 transition"><Tag className="w-4 h-4" /> Pricing Plans</Link>
+                  <Link href="/contact" className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 transition"><HelpCircle className="w-4 h-4" /> Help & Support</Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -152,19 +128,11 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-[3px] text-amber-600 mb-4">Nigeria&apos;s Agricultural Nexus</p>
-              <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 leading-tight mb-6">
-                Connect Directly With Verified Farmers & Buyers
-              </h1>
-              <p className="text-lg text-gray-500 mb-8 leading-relaxed">
-                Skip the middlemen. Access fair prices, secure payments, and a nationwide network of trusted agricultural partners.
-              </p>
+              <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 leading-tight mb-6">Connect Directly With Verified Farmers & Buyers</h1>
+              <p className="text-lg text-gray-500 mb-8 leading-relaxed">Skip the middlemen. Access fair prices, secure payments, and a nationwide network of trusted agricultural partners.</p>
               <div className="flex flex-wrap gap-4 mb-8">
-                <Link href="/marketplace" className="border-2 border-green-900 text-green-900 px-8 py-3.5 rounded-xl font-semibold hover:bg-green-50 transition">
-                  Browse Marketplace
-                </Link>
-                <Link href="/signup" className="bg-amber-600 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-amber-700 transition shadow-md">
-                  Start Selling
-                </Link>
+                <Link href="/marketplace" className="border-2 border-green-900 text-green-900 px-8 py-3.5 rounded-xl font-semibold hover:bg-green-50 transition">Browse Marketplace</Link>
+                <Link href="/signup" className="bg-amber-600 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-amber-700 transition shadow-md">Start Selling</Link>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-500">
                 <span className="flex items-center gap-1"><ShieldCheck className="w-4 h-4 text-green-700" /> Paystack Secure</span>
@@ -173,22 +141,10 @@ export default function Home() {
               </div>
             </div>
             <div className="relative">
-              <Image
-                src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80"
-                alt="Nigerian farmer in field"
-                width={600}
-                height={450}
-                className="rounded-3xl shadow-2xl w-full h-auto"
-                priority
-              />
+              <Image src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80" alt="Nigerian farmer in field" width={600} height={450} className="rounded-3xl shadow-2xl w-full h-auto" priority />
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-4">
-                <div className="bg-green-100 p-3 rounded-xl">
-                  <ShieldCheck className="w-6 h-6 text-green-700" />
-                </div>
-                <div>
-                  <p className="font-bold text-gray-900">₦500M+</p>
-                  <p className="text-xs text-gray-500">Secured Transactions</p>
-                </div>
+                <div className="bg-green-100 p-3 rounded-xl"><ShieldCheck className="w-6 h-6 text-green-700" /></div>
+                <div><p className="font-bold text-gray-900">₦500M+</p><p className="text-xs text-gray-500">Secured Transactions</p></div>
               </div>
             </div>
           </div>
@@ -242,10 +198,7 @@ export default function Home() {
               { number: '5,000+', label: 'Verified Sellers' },
               { number: '48', label: 'States Covered' },
             ].map((stat) => (
-              <div key={stat.label}>
-                <p className="text-4xl md:text-5xl font-serif font-bold text-white mb-2">{stat.number}</p>
-                <p className="text-green-300 text-sm">{stat.label}</p>
-              </div>
+              <div key={stat.label}><p className="text-4xl md:text-5xl font-serif font-bold text-white mb-2">{stat.number}</p><p className="text-green-300 text-sm">{stat.label}</p></div>
             ))}
           </div>
         </div>
@@ -261,10 +214,8 @@ export default function Home() {
               { icon: Lock, title: 'Secure Escrow Payments', desc: 'Your money is protected. Payment is held securely by Paystack and only released when you confirm successful delivery.', img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80' },
               { icon: Globe, title: 'Nationwide Reach', desc: 'Connect with farmers and buyers across all 48 states. No matter where you are, FarmBridge brings the market to you.', img: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&q=80' },
             ].map((item, i) => (
-              <div key={item.title} className={`grid md:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                <div className={i % 2 === 1 ? 'md:order-2' : ''}>
-                  <Image src={item.img} alt={item.title} width={500} height={350} className="rounded-2xl shadow-lg w-full h-auto" />
-                </div>
+              <div key={item.title} className={`grid md:grid-cols-2 gap-12 items-center`}>
+                <div className={i % 2 === 1 ? 'md:order-2' : ''}><Image src={item.img} alt={item.title} width={500} height={350} className="rounded-2xl shadow-lg w-full h-auto" /></div>
                 <div>
                   <item.icon className="w-10 h-10 text-green-800 mb-4" />
                   <h3 className="text-2xl font-serif font-bold text-gray-900 mb-3">{item.title}</h3>
@@ -291,10 +242,7 @@ export default function Home() {
                 <p className="text-gray-600 italic my-4 leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
                   <Image src={t.avatar} alt={t.name} width={48} height={48} className="rounded-full" />
-                  <div>
-                    <p className="font-semibold text-gray-900 text-sm">{t.name}</p>
-                    <p className="text-xs text-gray-400">{t.role}</p>
-                  </div>
+                  <div><p className="font-semibold text-gray-900 text-sm">{t.name}</p><p className="text-xs text-gray-400">{t.role}</p></div>
                 </div>
               </div>
             ))}
@@ -320,11 +268,7 @@ export default function Home() {
                   <span className="text-xs font-medium bg-green-100 text-green-800 px-3 py-1 rounded-full">{post.category}</span>
                   <h4 className="font-semibold text-gray-900 mt-3 group-hover:text-green-800 transition">{post.title}</h4>
                   <p className="text-sm text-gray-500 mt-2 line-clamp-2">{post.excerpt}</p>
-                  <div className="flex items-center gap-3 mt-4 text-xs text-gray-400">
-                    <span>{post.date}</span>
-                    <span>·</span>
-                    <span>{post.readTime}</span>
-                  </div>
+                  <div className="flex items-center gap-3 mt-4 text-xs text-gray-400"><span>{post.date}</span><span>·</span><span>{post.readTime}</span></div>
                 </div>
               </Link>
             ))}
@@ -372,9 +316,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
             <div className="lg:col-span-2">
               <Link href="/" className="flex items-center gap-2 mb-4">
-                <div className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center">
-                  <Sprout className="w-5 h-5 text-green-300" />
-                </div>
+                <div className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center"><Sprout className="w-5 h-5 text-green-300" /></div>
                 <span className="font-extrabold text-xl text-white">FarmBridge</span>
               </Link>
               <p className="text-green-300 text-sm max-w-sm">Nigeria&apos;s premium agricultural marketplace. Connecting verified farmers and buyers with secure escrow protection.</p>
@@ -386,7 +328,7 @@ export default function Home() {
                 <li><Link href="/how-it-works" className="hover:text-white">How It Works</Link></li>
                 <li><Link href="/pricing" className="hover:text-white">Pricing</Link></li>
                 <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
-                <li><Link href="/about" className="hover:text-white">About</Link></li> 
+                <li><Link href="/about" className="hover:text-white">About</Link></li>
               </ul>
             </div>
             <div>
