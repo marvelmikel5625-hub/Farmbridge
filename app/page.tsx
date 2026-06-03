@@ -134,8 +134,8 @@ export default function Home() {
               <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-green-800">About</Link>
             </div>
             <div className="hidden lg:flex items-center gap-3">
-              <a href="https://wa.me/2349077753551" className="flex items-center gap-1 text-green-700 text-sm font-medium">
-                <Phone className="w-4 h-4" /> 09057773551
+              <a href="https://wa.me/2349077753551" className="flex items-center gap-1.5 bg-green-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-green-700 transition">
+                <MessageCircle className="w-4 h-4" /> Chat Us
               </a>
               <Link href="/login" className="text-sm font-medium text-gray-600 hover:text-green-800">Sign In</Link>
               <Link href="/signup" className="bg-green-900 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-green-800 transition">
